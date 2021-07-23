@@ -1,0 +1,5 @@
+*-lock.json
+node_modules
+.env
+bundle.js
+APIKEY.jsx

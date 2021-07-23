@@ -1,0 +1,35 @@
+{
+  "name": "Save_for_Success",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development",
+    "watch": "webpack --watch --mode development",
+    "start": "node server/index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbooyah93/Sutherlands-movie-api.git"
+  },
+  "keywords": [
+    "Budget",
+    "Savings"
+  ],
+  "author": "David M Boyea",
+  "license": "ISC",
+  "homepage": "https://github.com/dbooyah93/TBD",
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "axios": "^0.21.0",
+    "babel-loader": "^8.2.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0"
+  }
+}
