@@ -7,6 +7,9 @@ class App extends React.Component {
         }
     }
     render() {
+        <div>
+            <h1>This is a JavaScript application rendering an element</h1>
+        </div>
     }
   }
   export default App;
