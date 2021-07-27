@@ -19,7 +19,7 @@ class App extends React.Component {
 
                         <Row>
                             <Col>
-                                This site is under constant maitenance. Please check back daily for updates. Soon we will we allow comunications to me, David, and our current contractor, Andy.
+                                This site is under constant maintenance. Please check back daily for updates. Soon we will we allow comunications to me, David, and our current contractor, Andy.
                             </Col>
                         </Row>
                         <Container>
