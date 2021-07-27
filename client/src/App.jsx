@@ -1,4 +1,5 @@
 import React from 'react';
+import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
 
 class App extends React.Component {
     constructor( props ) {
@@ -9,23 +10,71 @@ class App extends React.Component {
     render() {
         return ( 
             <div>
-                <h1>This is a JavaScript application rendering an element</h1>
-                <p>What i Have learned is that I need to develop locally for speed, but the website does deploy in about a minute after pushing</p>
-                <div class="row">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="./resources/images/AndysConcrete/sideWalkDemoStart.jpg" alt="First slide"/>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="./resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg" alt="Second slide"/>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg" alt="Third slide"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Card>
+                    <Card.Header>
+                        <h1>Andy's Concrete Solutions </h1>
+                        <h3>Hosted by Concrete Connections</h3>
+                    </Card.Header>
+                    <Card.Body>
+
+                        <Row>
+                            <Col>
+                                This site is under constant maitenance. Please check back daily for updates. Soon we will we allow comunications to me, David, and our current contractor, Andy.
+                            </Col>
+                        </Row>
+                        <Container>
+                            <Carousel fade>
+                                <Carousel.Item>
+                                    <img
+                                    className="d-block w-100"
+                                    src="./resources/images/AndysConcrete/sideWalkDemoStart.jpg"
+                                    alt="First slide"
+                                    />
+                                    <Carousel.Caption>
+                                    <h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <img
+                                    className="d-block w-100"
+                                    src="./resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg"
+                                    alt="Second slide"
+                                    />
+
+                                    <Carousel.Caption>
+                                    <h3>Second slide label</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <img
+                                    className="d-block w-100"
+                                    src="./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg"
+                                    alt="Third slide"
+                                    />
+
+                                    <Carousel.Caption>
+                                    <h3>Third slide label</h3>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <img
+                                    className="d-block w-100"
+                                    src="./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg"
+                                    alt="Fourth slide"
+                                    />
+
+                                    <Carousel.Caption>
+                                    <h3>Fourth slide label</h3>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                            </Carousel>
+                        </Container>
+                    </Card.Body>
+                </Card>
             </div>
         )
     }
