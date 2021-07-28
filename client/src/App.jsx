@@ -26,7 +26,10 @@ class App extends React.Component {
 
                         <Row>
                             <Col>
-                                This site is under constant maintenance. Please check back daily for updates. Soon we will we allow comunication to reach me, David, and our current contractor, Andy.
+                                We aim to join ambitious skilled private construction contractors with residential jobs. Please check back daily for updates as soon we will allow you to send messages, request a quote, and allow contractors to set up profiles with their own galleries.
+
+                                Thank you!!
+
                             </Col>
                         </Row>
                         <Container>
