@@ -40,7 +40,7 @@ class App extends React.Component {
                         <Row>
                             <Col>
                                 <h3>
-                                    Home owners:::
+                                    Homeowners:::
                                 </h3>
                             </Col>
                             <Col xs={9}>
