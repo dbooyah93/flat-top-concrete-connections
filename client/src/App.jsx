@@ -23,17 +23,14 @@ class App extends React.Component {
                         <h3>Hosted by Constructing Connections</h3>
                     </Card.Header>
                     <Card.Body>
-
                         <Row>
                             <Col>
                                 We aim to join ambitious skilled private construction contractors with residential jobs. Please check back daily for updates as soon we will allow you to send messages, request a quote, and allow contractors to set up profiles with their own galleries.
-
                                 Thank you!!
-
                             </Col>
                         </Row>
-                        <Container>
-                            <Carousel fade>
+                        <Container >
+                            <Carousel fade={true}>
                                 {
                                     this.state.images.map( ( imagePath, index ) => {
                                         return (
@@ -42,6 +39,7 @@ class App extends React.Component {
                                                 className="d-block w-100"
                                                 src={imagePath}
                                                 alt="First slide"
+                                                height="800"
                                                 />
                                             </Carousel.Item>
                                         )
