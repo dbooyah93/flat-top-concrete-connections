@@ -1,6 +1,5 @@
 import React from 'react';
 import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
-import ImageCarouselBuilder from './components/ImageCarouselBuilder.jsx';
 
 class App extends React.Component {
     constructor( props ) {
@@ -21,7 +20,7 @@ class App extends React.Component {
                 <Card>
                     <Card.Header>
                         <h1>Andy's Concrete Solutions </h1>
-                        <h3>Hosted by Concrete Connections</h3>
+                        <h3>Hosted by Constructing Connections</h3>
                     </Card.Header>
                     <Card.Body>
 
