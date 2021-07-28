@@ -1,10 +1,18 @@
 import React from 'react';
 import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
+import ImageCarouselBuilder from './components/ImageCarouselBuilder.jsx';
 
 class App extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
+            images: [
+                "./resources/images/AndysConcrete/sideWalkDemoStart.jpg",
+                "./resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg",
+                "./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg",
+                "./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
+                "./resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
+            ]
         }
     }
     render() {
@@ -24,53 +32,19 @@ class App extends React.Component {
                         </Row>
                         <Container>
                             <Carousel fade>
-                                <Carousel.Item>
-                                    <img
-                                    className="d-block w-100"
-                                    src="./resources/images/AndysConcrete/sideWalkDemoStart.jpg"
-                                    alt="First slide"
-                                    />
-                                    <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                    className="d-block w-100"
-                                    src="./resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg"
-                                    alt="Second slide"
-                                    />
-
-                                    <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                    className="d-block w-100"
-                                    src="./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg"
-                                    alt="Third slide"
-                                    />
-
-                                    <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                    className="d-block w-100"
-                                    src="./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg"
-                                    alt="Fourth slide"
-                                    />
-
-                                    <Carousel.Caption>
-                                    <h3>Fourth slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
+                                {
+                                    this.state.images.map( ( imagePath, index ) => {
+                                        return (
+                                            <Carousel.Item key={index}>
+                                                <img
+                                                className="d-block w-100"
+                                                src={imagePath}
+                                                alt="First slide"
+                                                />
+                                            </Carousel.Item>
+                                        )
+                                    })
+                                }
                             </Carousel>
                         </Container>
                     </Card.Body>
