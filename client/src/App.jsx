@@ -24,18 +24,10 @@ class App extends React.Component {
                     </Card.Header>
                     <Card.Body>
                         <Row>
-                            <Col></Col>
-                            <Col xs={10}>
-                                We aim to join ambitious skilled private construction contractors with residential jobs.
-                            </Col>
-                            <Col></Col>
+                            We aim to join ambitious skilled private construction contractors with residential jobs.
                         </Row>
                         <Row>
-                            <Col></Col>
-                            <Col xs={10}>
-                                Please check below Andy's images for a form to reach us with. --- AS OF 7/28/21 THIS IS NOT FUNCTIONAL PLEASE EXPECT AN UPDATE WITHIN 24 HOURS
-                            </Col>
-                            <Col></Col>
+                            Please check below Andy's images for a form to reach us with. --- AS OF 7/28/21 THIS IS NOT FUNCTIONAL PLEASE EXPECT AN UPDATE WITHIN 24 HOURS
                         </Row>
                         <Row>
                             <Col>
