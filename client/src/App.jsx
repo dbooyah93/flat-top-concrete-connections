@@ -11,7 +11,12 @@ class App extends React.Component {
                 "./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg",
                 "./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
                 "./resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
-            ]
+            ],
+            userInput: {
+                emailAddress: '',
+                message: '',
+                images: [],
+            }
         }
     }
     render() {
@@ -74,8 +79,12 @@ class App extends React.Component {
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control type="email" placeholder="Enter email" />
                                 <Form.Text className="text-muted">
-                                    We will never share your email with anyone else.
+                                    We will only share your email address with the contractor(s) you choose
                                 </Form.Text>
+                            </Form.Group>
+                            <Form.Group controlId="formFileMultiple" className="mb-3">
+                                <Form.Label>As many files as you can deliver</Form.Label>
+                                <Form.Control type="file" multiple />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Your message</Form.Label>
