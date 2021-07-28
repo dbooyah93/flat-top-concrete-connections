@@ -38,19 +38,26 @@ class App extends React.Component {
                             <Col></Col>
                         </Row>
                         <Row>
-                            <Col></Col>
-                            <Col xs={10}>
-                                Home owners::: if you are interested in a quote for any kind of home improvement project or repair, please prepare images and dimensions of the project at hand. 
+                            <Col>
+                                <h3>
+                                    Home owners:::
+                                </h3>
+                            </Col>
+                            <Col xs={9}>
+                                 if you are interested in a quote for any kind of home improvement project or repair, please prepare images and dimensions of the project at hand. 
                                 The more detail you provide the more accurate the quote. Final quotes will be given after the first visit from the contractor.
                             </Col>
-                            <Col></Col>
                         </Row>
+                        <br/>
                         <Row>
-                            <Col></Col>
-                            <Col xs={10}>
-                                Contractors::: if you are interested in providing a service please check back soon with your questions ready. I am building this site with a contractor and if I don't know something, he will.
+                            <Col>
+                                <h3>
+                                    Contractors:::
+                                </h3>
                             </Col>
-                            <Col></Col>
+                            <Col xs={9}>
+                                If you are interested in providing a service please check back soon with your questions ready. I am building this site with a contractor and if I don't know something, he will.
+                            </Col>
                         </Row>
                         <Container >
                             <Carousel fade={true}>
