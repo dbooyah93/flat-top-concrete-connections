@@ -24,14 +24,33 @@ class App extends React.Component {
                     </Card.Header>
                     <Card.Body>
                         <Row>
-                            <Col>
+                            <Col></Col>
+                            <Col xs={10}>
                                 We aim to join ambitious skilled private construction contractors with residential jobs.
                             </Col>
+                            <Col></Col>
                         </Row>
                         <Row>
-                            <Col>
-                                Please check below Andy's images for a form to reach us at. --- AS OF 7/28/21 THIS IS NOT FUNCTIONAL PLEASE EXPECT AN UPDATE WITHIN 24 HOURS
+                            <Col></Col>
+                            <Col xs={10}>
+                                Please check below Andy's images for a form to reach us with. --- AS OF 7/28/21 THIS IS NOT FUNCTIONAL PLEASE EXPECT AN UPDATE WITHIN 24 HOURS
                             </Col>
+                            <Col></Col>
+                        </Row>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={10}>
+                                Home owners::: if you are interested in a quote for any kind of home improvement project or repair, please prepare images and dimensions of the project at hand. 
+                                The more detail you provide the more accurate the quote. Final quotes will be given after the first visit from the contractor.
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={10}>
+                                Contractors::: if you are interested in providing a service please check back soon with your questions ready. I am building this site with a contractor and if I don't know something, he will.
+                            </Col>
+                            <Col></Col>
                         </Row>
                         <Container >
                             <Carousel fade={true}>
@@ -60,7 +79,7 @@ class App extends React.Component {
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label>Example textarea</Form.Label>
+                                <Form.Label>Your message</Form.Label>
                                 <Form.Control as="textarea" rows={3} />
                             </Form.Group>
                         </Form>
