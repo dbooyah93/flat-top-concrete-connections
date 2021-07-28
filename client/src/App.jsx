@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
+import { Carousel, Container, Row, Col, Card, Form } from 'react-bootstrap';
 
 class App extends React.Component {
     constructor( props ) {
@@ -25,8 +25,12 @@ class App extends React.Component {
                     <Card.Body>
                         <Row>
                             <Col>
-                                We aim to join ambitious skilled private construction contractors with residential jobs. Please check back daily for updates as soon we will allow you to send messages, request a quote, and allow contractors to set up profiles with their own galleries.
-                                Thank you!!
+                                We aim to join ambitious skilled private construction contractors with residential jobs.
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Please check below Andy's images for a form to reach us at. --- AS OF 7/28/21 THIS IS NOT FUNCTIONAL PLEASE EXPECT AN UPDATE WITHIN 24 HOURS
                             </Col>
                         </Row>
                         <Container >
@@ -47,6 +51,19 @@ class App extends React.Component {
                                 }
                             </Carousel>
                         </Container>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Text className="text-muted">
+                                    We will never share your email with anyone else.
+                                </Form.Text>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                <Form.Label>Example textarea</Form.Label>
+                                <Form.Control as="textarea" rows={3} />
+                            </Form.Group>
+                        </Form>
                     </Card.Body>
                 </Card>
             </div>
