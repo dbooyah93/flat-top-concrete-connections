@@ -2,7 +2,7 @@
 A website that will deliver quotes to clients, and jobs to contractors
 ## Overview
 ### The site
-[onstructingconnections.com](constructingconnections.com)
+[constructingconnections.com](http://constructingconnections.com)
 
 ### The purpose
 Offload the need for contractors to focus on networking and deliver quality artisans to the doors of non commercial clients
