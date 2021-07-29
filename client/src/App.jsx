@@ -12,15 +12,23 @@ class App extends React.Component {
                 "./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
                 "./resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
             ],
-            email: 'email',
+            email: '',
+            message: '',
+            files: [],
         }
         this.handleTextChange = this.handleTextChange.bind(this);
+        this.handleMultiImageUpload = this.handleMultiImageUpload.bind(this);
     }
 
     handleTextChange ( event ) {
-        let stateTarget = event.type;
+        let stateTarget = event.target.type;
         let value = event.target.value;
-        console.log({ stateTarget, value })
+        this.setState({ [stateTarget]: value});
+        console.log(this.state)
+    }
+
+    handleMultiImageUpload ( event ) {
+        console.log( event );
     }
 
     render() {
@@ -60,8 +68,8 @@ class App extends React.Component {
                                 If you are interested in providing a service please check back soon with your questions ready. I am building this site with a contractor and if I don't know something, he will.
                             </Col>
                         </Row>
-                        <Container >
-                            <Carousel fade={true}>
+                        <Container>
+                            <Carousel fade={true} height="800">
                                 {
                                     this.state.images.map( ( imagePath, index ) => {
                                         return (
@@ -81,18 +89,18 @@ class App extends React.Component {
                         <Form>
                             <Form.Group className="mb-3" controlId="email">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control onChange={ this.handleTextChange} type="email" placeholder="Enter email" />
+                                <Form.Control onChange={ this.handleTextChange } type="email" placeholder="Enter email" />
                                 <Form.Text className="text-muted">
                                     We will only share your email address with the contractor(s) you choose
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group controlId="formFileMultiple" className="mb-3">
-                                <Form.Label>As many files as you can deliver</Form.Label>
-                                <Form.Control type="file" multiple />
+                                <Form.Label>Check back in this weekend for the ability to upload images</Form.Label>
+                                <Form.Control onChange={ this.handleMultiImageUpload } type="file" multiple disabled/>
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                            <Form.Group className="mb-3" controlId="message">
                                 <Form.Label>Your message</Form.Label>
-                                <Form.Control as="textarea" rows={3} />
+                                <Form.Control onChange={ this.handleTextChange } as="textarea" rows={3} />
                             </Form.Group>
                         </Form>
                     </Card.Body>
