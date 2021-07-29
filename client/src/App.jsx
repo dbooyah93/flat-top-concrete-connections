@@ -49,7 +49,7 @@ class App extends React.Component {
                             We aim to join ambitious skilled private construction contractors with residential jobs.
                         </Row>
                         <Row>
-                            Please check below Andy's images for a form to reach us with. --- AS OF 7/28/21 THIS IS NOT FUNCTIONAL PLEASE EXPECT AN UPDATE WITHIN 24 HOURS
+                            Please check below Andy's images for a form to reach us with. --- AS OF 7/28/21 THIS IS NOT FUNCTIONAL. AS OF 7/29/21 THIS IS NOT FUNCTIONAL. Check back within the next day or two for updates to the page and the form.
                         </Row>
                         <Row>
                             <Col>
