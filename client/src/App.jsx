@@ -107,7 +107,7 @@ class App extends React.Component {
                                 <Form.Label>Your message</Form.Label>
                                 <Form.Control onChange={ this.handleTextChange } as="textarea" rows={3} />
                             </Form.Group>
-                            <Button onClick={ this.sendClientEmail } variant="primary">Send</Button>
+                            <Button onClick={ this.sendClientEmail } variant="primary" disabled>Send</Button>
                         </Form>
                     </Card.Body>
                 </Card>
