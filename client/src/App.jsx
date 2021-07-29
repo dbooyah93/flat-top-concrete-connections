@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Container, Row, Col, Card, Form } from 'react-bootstrap';
+import { Carousel, Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 
 class App extends React.Component {
     constructor( props ) {
@@ -102,6 +102,7 @@ class App extends React.Component {
                                 <Form.Label>Your message</Form.Label>
                                 <Form.Control onChange={ this.handleTextChange } as="textarea" rows={3} />
                             </Form.Group>
+                            <Button variant="primary">Send</Button>
                         </Form>
                     </Card.Body>
                 </Card>
