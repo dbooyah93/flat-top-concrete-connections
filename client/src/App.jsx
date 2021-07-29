@@ -12,13 +12,17 @@ class App extends React.Component {
                 "./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
                 "./resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
             ],
-            userInput: {
-                emailAddress: '',
-                message: '',
-                images: [],
-            }
+            email: 'email',
         }
+        this.handleTextChange = this.handleTextChange.bind(this);
     }
+
+    handleTextChange ( event ) {
+        let stateTarget = event.type;
+        let value = event.target.value;
+        console.log({ stateTarget, value })
+    }
+
     render() {
         return ( 
             <div>
@@ -75,9 +79,9 @@ class App extends React.Component {
                             </Carousel>
                         </Container>
                         <Form>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Group className="mb-3" controlId="email">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Control onChange={ this.handleTextChange} type="email" placeholder="Enter email" />
                                 <Form.Text className="text-muted">
                                     We will only share your email address with the contractor(s) you choose
                                 </Form.Text>
