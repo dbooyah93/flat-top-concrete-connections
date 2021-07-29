@@ -18,16 +18,21 @@ class App extends React.Component {
         }
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleMultiImageUpload = this.handleMultiImageUpload.bind(this);
+        this.sendClientEmail = this.sendClientEmail.bind(this);
     }
 
     handleTextChange ( event ) {
         let stateTarget = event.target.type;
         let value = event.target.value;
         this.setState({ [stateTarget]: value});
-        console.log(this.state)
+        console.log(this.state);
     }
 
     handleMultiImageUpload ( event ) {
+        console.log( event );
+    }
+
+    sendClientEmail ( event ) {
         console.log( event );
     }
 
@@ -102,7 +107,7 @@ class App extends React.Component {
                                 <Form.Label>Your message</Form.Label>
                                 <Form.Control onChange={ this.handleTextChange } as="textarea" rows={3} />
                             </Form.Group>
-                            <Button variant="primary">Send</Button>
+                            <Button onClick={ this.sendClientEmail } variant="primary">Send</Button>
                         </Form>
                     </Card.Body>
                 </Card>
