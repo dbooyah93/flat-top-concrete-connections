@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Carousel, Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 
 class App extends React.Component {
@@ -33,7 +34,10 @@ class App extends React.Component {
     }
 
     sendClientEmail ( event ) {
-        console.log( event );
+        axios.get( '/email', )
+            .then( ( response ) => {
+                console.log( response.data );
+            });
     }
 
     render() {
@@ -107,7 +111,7 @@ class App extends React.Component {
                                 <Form.Label>Your message</Form.Label>
                                 <Form.Control onChange={ this.handleTextChange } as="textarea" rows={3} />
                             </Form.Group>
-                            <Button onClick={ this.sendClientEmail } variant="primary" disabled>Send</Button>
+                            <Button onClick={ this.sendClientEmail } variant="primary" >Send</Button>
                         </Form>
                     </Card.Body>
                 </Card>
