@@ -23,7 +23,7 @@ class App extends React.Component {
     }
 
     handleTextChange ( event ) {
-        let stateTarget = event.target.type;
+        let stateTarget = event.target.id;
         let value = event.target.value;
         this.setState({ [stateTarget]: value});
         console.log(this.state);
@@ -34,7 +34,11 @@ class App extends React.Component {
     }
 
     sendClientEmail ( event ) {
-        axios.get( '/email', )
+        axios.post( '/email', {
+            email: this.state.email,
+            message: this.state.message,
+            files: 'this.files'
+        })
             .then( ( response ) => {
                 console.log( response.data );
             });
@@ -47,14 +51,11 @@ class App extends React.Component {
                     <Card.Header>
                         <h1>Andy's Concrete Solutions </h1>
                         <h3>Hosted by Constructing Connections</h3>
+                        <p>Please check below Andy's project gallery for the form with wich you may reach us.</p>
                     </Card.Header>
                     <Card.Body>
-                        <Row>
-                            We aim to join ambitious skilled private construction contractors with residential jobs.
-                        </Row>
-                        <Row>
-                            Please check below Andy's images for a form to reach us with. --- AS OF 7/28/21 THIS IS NOT FUNCTIONAL. AS OF 7/29/21 THIS IS NOT FUNCTIONAL. Check back within the next day or two for updates to the page and the form.
-                        </Row>
+                            <p>We aim to join ambitious skilled private construction contractors with residential jobs.</p>
+
                         <Row>
                             <Col>
                                 <h3>
@@ -62,7 +63,7 @@ class App extends React.Component {
                                 </h3>
                             </Col>
                             <Col xs={9}>
-                                 if you are interested in a quote for any kind of home improvement project or repair, please prepare images and dimensions of the project at hand. 
+                                If you are interested in a quote for any kind of home improvement project or repair, please prepare images and dimensions of the project at hand. 
                                 The more detail you provide the more accurate the quote. Final quotes will be given after the first visit from the contractor.
                             </Col>
                         </Row>
@@ -109,7 +110,7 @@ class App extends React.Component {
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="message">
                                 <Form.Label>Your message</Form.Label>
-                                <Form.Control onChange={ this.handleTextChange } as="textarea" rows={3} />
+                                <Form.Control onChange={ this.handleTextChange } as="textarea" type="message" rows={3} />
                             </Form.Group>
                             <Button onClick={ this.sendClientEmail } variant="primary" >Send</Button>
                         </Form>
