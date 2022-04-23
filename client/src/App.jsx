@@ -49,9 +49,8 @@ class App extends React.Component {
             <div>
                 <Card>
                     <Card.Header>
-                        <h1>Andy's Concrete Solutions </h1>
-                        <h3>Hosted by Constructing Connections</h3>
-                        <p>Please check below Andy's project gallery for the form with wich you may reach us.</p>
+                        <h1>Constructing Connections</h1>
+                        <p>Please check below the project gallery for the form with which you may reach us.</p>
                     </Card.Header>
                     <Card.Body>
                             <p>We aim to join ambitious skilled private construction contractors with residential jobs.</p>
@@ -96,24 +95,24 @@ class App extends React.Component {
                                 }
                             </Carousel>
                         </Container>
-                        <Form>
-                            <Form.Group className="mb-3" controlId="email">
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control onChange={ this.handleTextChange } type="email" placeholder="Enter email" />
-                                <Form.Text className="text-muted">
-                                    We will only share your email address with the contractor(s) you choose
-                                </Form.Text>
-                            </Form.Group>
-                            <Form.Group controlId="formFileMultiple" className="mb-3">
-                                <Form.Label>Check back in this weekend for the ability to upload images</Form.Label>
-                                <Form.Control onChange={ this.handleMultiImageUpload } type="file" multiple disabled/>
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="message">
-                                <Form.Label>Your message</Form.Label>
-                                <Form.Control onChange={ this.handleTextChange } as="textarea" type="message" rows={3} />
-                            </Form.Group>
-                            <Button onClick={ this.sendClientEmail } variant="primary" >Send</Button>
-                        </Form>
+                            <Form>
+                                <Form.Group className="mb-3" controlId="email">
+                                    <Form.Label>Email address</Form.Label>
+                                    <Form.Control onChange={ this.handleTextChange } type="email" placeholder="Enter email" />
+                                    <Form.Text className="text-muted">
+                                        We will only share your email address with the contractor(s) you choose
+                                    </Form.Text>
+                                </Form.Group>
+                                <Form.Group controlId="formFileMultiple" className="mb-3">
+                                    <Form.Label>Check back in this weekend for the ability to upload images</Form.Label>
+                                    <Form.Control onChange={ this.handleMultiImageUpload } type="file" multiple disabled/>
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="message">
+                                    <Form.Label>Your message</Form.Label>
+                                    <Form.Control onChange={ this.handleTextChange } as="textarea" type="message" rows={3} />
+                                </Form.Group>
+                                <Button onClick={ this.sendClientEmail } variant="primary" >Send</Button>
+                            </Form>
                     </Card.Body>
                 </Card>
             </div>
