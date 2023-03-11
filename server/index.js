@@ -11,7 +11,9 @@ app.use( express.json( { extended: true } ) );
 app.use( '/', express.static( __dirname + '/../client/dist' ) );
 
 let transporter = nodemailer.createTransport({
-  service: 'Gmail',
+  service: 'mail.privateemail.com',
+  port: 465,
+  secure: true,
   auth: {
     user: EMAILADDRESS,
     pass: EMAILPASS

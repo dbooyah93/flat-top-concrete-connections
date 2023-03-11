@@ -6,13 +6,13 @@ class App extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
-            images: [
-                "./resources/images/AndysConcrete/sideWalkDemoStart.jpg",
-                "./resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg",
-                "./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg",
-                "./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
-                "./resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
-            ],
+            // images: [
+            //     "./resources/images/AndysConcrete/sideWalkDemoStart.jpg",
+            //     "./resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg",
+            //     "./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg",
+            //     "./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
+            //     "./resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
+            // ],
             email: '',
             message: '',
             files: [],
@@ -77,24 +77,6 @@ class App extends React.Component {
                                 If you are interested in providing a service please check back soon with your questions ready. I am building this site with a contractor and if I don't know something, he will.
                             </Col>
                         </Row>
-                        <Container>
-                            <Carousel fade={true} height="800">
-                                {
-                                    this.state.images.map( ( imagePath, index ) => {
-                                        return (
-                                            <Carousel.Item key={index}>
-                                                <img
-                                                className="d-block w-100"
-                                                src={imagePath}
-                                                alt="First slide"
-                                                height="800"
-                                                />
-                                            </Carousel.Item>
-                                        )
-                                    })
-                                }
-                            </Carousel>
-                        </Container>
                             <Form>
                                 <Form.Group className="mb-3" controlId="email">
                                     <Form.Label>Email address</Form.Label>
