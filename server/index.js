@@ -8,7 +8,7 @@ const EMAILPASS = process.env.EMAILPASS;
 
 app.use( express.urlencoded( { extended: true } ) );
 app.use( express.json( { extended: true } ) );
-app.use( '/', express.static( __dirname + '/../client/dist' ) );
+app.use( '/', express.static( __dirname + '/../client/dist/pages/homepage' ) );
 
 let transporter = nodemailer.createTransport({
   service: 'mail.privateemail.com',
