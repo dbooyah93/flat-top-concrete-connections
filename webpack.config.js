@@ -9,9 +9,9 @@ module.exports = () => {
   // reduce it to a nice object, the same as before
 
   return {
-    entry: './client/src/index.jsx',
+    entry: './client/src/homepage/index.jsx',
     output: {
-      path: path.join( __dirname, '/client/dist' ),
+      path: path.join( __dirname, '/client/dist/pages/homepage' ),
       filename: 'bundle.js',
     },
     module: {
