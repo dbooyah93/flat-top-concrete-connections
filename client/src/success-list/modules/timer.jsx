@@ -1,4 +1,7 @@
-import React from 'react';
+import { useEffect, useMemo, useState, React } from 'react';
+
+// useMemo is to memorize
+// useState is to notify react that the variable will be udpated
 
 const Timer = ({}) => {
     let date = new Date();
