@@ -3,11 +3,16 @@ import { useEffect, useMemo, useState, React } from 'react';
 // useMemo is to memorize
 // useState is to notify react that the variable will be udpated
 
+
 const Timer = ({}) => {
     let date = new Date();
     // The following syntax sets the variable and the funciton
     const [HHMMSS, setTime] = useState(date.toLocaleTimeString());
     const [MMDDYYYY, setDate] = useState(date.toLocaleDateString());
+
+    // set interval
+
+    useEffect
     let updateTimeDay = function () {
         let verb = 1;
         let newDate = new Date();
@@ -31,6 +36,16 @@ const Timer = ({}) => {
     // function { 
     //   every 1000ms update the time variable
     // }
+
+    
+    // life cycle methods
+    // componentDidMount() {
+    //     document.title = `You clicked ${this.state.count} times`;
+    // }
+    // componentDidUpdate() {
+    //     document.title = `You clicked ${this.state.count} times`;
+    // }
+
     return (
         <div className="timer-root">
             <p className="day">{ MMDDYYYY }</p>
