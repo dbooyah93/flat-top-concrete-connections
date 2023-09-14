@@ -1,25 +1,16 @@
 import React from 'react';
 import axios from 'axios';
+import Timer from './modules/timer.jsx'
 import { Carousel, Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 
 class App extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
-            // images: [
-            //     "./resources/images/AndysConcrete/sideWalkDemoStart.jpg",
-            //     "./resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg",
-            //     "./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg",
-            //     "./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
-            //     "./resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
-            // ],
-            email: '',
-            message: '',
-            files: [],
+            some: 'sample text'
         }
-        this.handleTextChange = this.handleTextChange.bind(this);
-        this.handleMultiImageUpload = this.handleMultiImageUpload.bind(this);
-        this.sendClientEmail = this.sendClientEmail.bind(this);
+
+        // this.methods go here
     }
 
     handleTextChange ( event ) {
@@ -50,9 +41,11 @@ class App extends React.Component {
                 <Card>
                     <Card.Header>
                         <h1> This is the card header</h1>
+                        <Timer/>
                     </Card.Header>
                     <Card.Body>
                         <p> this is the card body</p>
+                        {this.some}
                     </Card.Body>
                 </Card>
             </div>
