@@ -20,15 +20,16 @@ const Timer = ({}) => {
         let newDate = new Date();
         let newMMDDYYYY = newDate.toLocaleDateString();
         let newHHMMSS = newDate.toLocaleTimeString();
-        const interval = setInterval( () => {
-            console.log('let it run')
-                return(
-                    setTime( newHHMMSS ),
-                    setDate( newMMDDYYYY )
-                )
-            }, 1000);
-
-            return () => clearInterval( interval );
+        let i = 0;
+        console.log('itteration?');
+        const interval = setInterval( 
+            ()=>{
+                console.log('setInterval');
+                setTime( i );
+                i++
+            },
+            1000
+        );
     }, []);
 
     // life cycle methods
