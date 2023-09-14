@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, React } from 'react';
 
 // useMemo is to memorize
 // useState is to notify react that the variable will be udpated
-
+// useEffect takes effect after componentMount/Updated
 
 const Timer = ({}) => {
     let date = new Date();
