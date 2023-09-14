@@ -1,3 +1,7 @@
+// Article referenced during refactoring
+// https://dev.to/yuridevat/how-to-create-a-timer-with-react-7b9
+// Article referenced during refactoring
+
 import { useEffect, useMemo, useState, React } from 'react';
 
 // useMemo is to memorize
@@ -7,37 +11,23 @@ import { useEffect, useMemo, useState, React } from 'react';
 const Timer = ({}) => {
     let date = new Date();
     // The following syntax sets the variable and the funciton
-    const [HHMMSS, setTime] = useState(date.toLocaleTimeString());
-    const [MMDDYYYY, setDate] = useState(date.toLocaleDateString());
+    const [ HHMMSS, setTime ] = useState( date.toLocaleTimeString() );
+    const [ MMDDYYYY, setDate ] = useState( date.toLocaleDateString() );
 
     // set interval
 
-    useEffect
-    let updateTimeDay = function () {
-        let verb = 1;
+    useEffect(()=> {
         let newDate = new Date();
         let newMMDDYYYY = newDate.toLocaleDateString();
         let newHHMMSS = newDate.toLocaleTimeString();
-        MMDDYYYY = newMMDDYYYY;
-        HHMMSS = newHHMMSS;
-        console.log('Verb =' + verb);
-        verb++
-        launchTimmer();
-    }
+        const interval = setInterval( () => {
+                setTime( newHHMMSS )
+                setDate( newMMDDYYYY );
+            }, 1000);
 
-    let launchTimmer = function () {
-        setTimeout(()=> {
-            updateTimeDay();
-        }, 1000);
-    }
+            return () => clearInterval( interval );
+    }, []);
 
-    updateTimeDay();
-
-    // function { 
-    //   every 1000ms update the time variable
-    // }
-
-    
     // life cycle methods
     // componentDidMount() {
     //     document.title = `You clicked ${this.state.count} times`;
