@@ -23,8 +23,8 @@ const Timer = ({}) => {
                 let newDate = new Date();
                 let newMMDDYYYY = newDate.toLocaleDateString();
                 let newHHMMSS = newDate.toLocaleTimeString();
-                console.log('setInterval');
                 setTime( newHHMMSS );
+                setDate( newMMDDYYYY );
             },
             1000
         );
