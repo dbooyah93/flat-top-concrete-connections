@@ -9,6 +9,8 @@ const EMAILPASS = process.env.EMAILPASS;
 app.use( express.urlencoded( { extended: true } ) );
 app.use( express.json( { extended: true } ) );
 app.use( '/', express.static( __dirname + '/../client/dist/pages/homepage' ) );
+app.use( '/success-list', express.static( __dirname + '/../client/dist/pages/success-list' ) );
+
 
 let transporter = nodemailer.createTransport({
   service: 'mail.privateemail.com',
@@ -38,6 +40,7 @@ app.post('/email', function ( req, res ) {
     res.send('fail');
   });
 });
+
 
 
 app.listen( PORT, () => {
