@@ -5,10 +5,9 @@ import { useEffect, useMemo, useState, React } from 'react';
 
 const Timer = ({}) => {
     let date = new Date();
-    let MMDDYYYY = date.toLocaleDateString();
-    // save day
-    let HHMMSS = date.toLocaleTimeString(); 
-    // save time
+    // The following syntax sets the variable and the funciton
+    const [HHMMSS, setTime] = useState(date.toLocaleTimeString());
+    const [MMDDYYYY, setDate] = useState(date.toLocaleDateString());
     let updateTimeDay = function () {
         let verb = 1;
         let newDate = new Date();
