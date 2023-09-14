@@ -7,33 +7,18 @@ class App extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
-            some: 'sample text'
+            some: 'sample text',
+            previousSuccess: this.findCurrentData()
         }
 
-        // this.methods go here
+        // this.methods = this.method.bind(this) go here
     }
 
-    handleTextChange ( event ) {
-        let stateTarget = event.target.id;
-        let value = event.target.value;
-        this.setState({ [stateTarget]: value});
-        console.log(this.state);
+    findCurrentData = function () {
+        let previousSuccess = localStorage.getItem('previousSuccess');
+        console.log('Previous success: ' + previousSuccess);
     }
-
-    handleMultiImageUpload ( event ) {
-        console.log( event );
-    }
-
-    sendClientEmail ( event ) {
-        axios.post( '/email', {
-            email: this.state.email,
-            message: this.state.message,
-            files: 'this.files'
-        })
-            .then( ( response ) => {
-                console.log( response.data );
-            });
-    }
+    
 
     render() {
         return ( 
