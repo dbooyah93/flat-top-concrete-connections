@@ -1,8 +1,8 @@
 // Article referenced during refactoring
 // https://dev.to/yuridevat/how-to-create-a-timer-with-react-7b9
 // Article referenced during refactoring
-
-import { useEffect, useMemo, useState, React } from 'react';
+import React from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 // useMemo is to memorize
 // useState is to notify react that the variable will be udpated
@@ -21,8 +21,11 @@ const Timer = ({}) => {
         let newMMDDYYYY = newDate.toLocaleDateString();
         let newHHMMSS = newDate.toLocaleTimeString();
         const interval = setInterval( () => {
-                setTime( newHHMMSS )
-                setDate( newMMDDYYYY );
+            console.log('let it run')
+                return(
+                    setTime( newHHMMSS ),
+                    setDate( newMMDDYYYY )
+                )
             }, 1000);
 
             return () => clearInterval( interval );
