@@ -9,10 +9,18 @@ module.exports = () => {
   // reduce it to a nice object, the same as before
 
   return {
-    entry: './client/src/homepage/index.jsx',
+    entry: {
+      homepage: './client/src/homepage/index.jsx',
+      successList: './client/src/success-list/index.jsx'
+    },
     output: {
-      path: path.join( __dirname, '/client/dist/pages/homepage' ),
-      filename: 'bundle.js',
+      filename: (chunkData) => {
+        return chunkData.chunk.name === 'homepage' ?
+        '/dist/pages/homepage/bundle.js' : 
+        // chunkData.chunk.name === 'successList' :
+        '/dist/pages/success-list/bundle.js'
+      },
+      path: path.resolve(__dirname, 'client')
     },
     module: {
       rules: [
