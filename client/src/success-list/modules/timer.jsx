@@ -17,16 +17,14 @@ const Timer = ({}) => {
     // set interval
 
     useEffect(()=> {
-        let newDate = new Date();
-        let newMMDDYYYY = newDate.toLocaleDateString();
-        let newHHMMSS = newDate.toLocaleTimeString();
-        let i = 0;
         console.log('itteration?');
         const interval = setInterval( 
             ()=>{
+                let newDate = new Date();
+                let newMMDDYYYY = newDate.toLocaleDateString();
+                let newHHMMSS = newDate.toLocaleTimeString();
                 console.log('setInterval');
-                setTime( i );
-                i++
+                setTime( newHHMMSS );
             },
             1000
         );
