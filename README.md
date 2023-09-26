@@ -19,3 +19,8 @@ Check in weekly or daily! Changes are happening most frequently Sunday night to 
 ### Guide for devs
 --- 
 - [nodemailer documentation for stmp emailing](https://nodemailer.com/smtp/)
+
+
+npm run watch
+
+node server/index.js
