@@ -24,3 +24,11 @@ Check in weekly or daily! Changes are happening most frequently Sunday night to 
 npm run watch
 
 node server/index.js
+
+## Pages
+
+### Success-list
+- /success-list
+
+### Homepge
+- /
