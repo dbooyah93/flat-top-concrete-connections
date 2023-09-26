@@ -27,8 +27,8 @@ node server/index.js
 
 ## Pages
 
-### Success-list
-- /success-list
-
 ### Homepge
 - /
+
+### Success-list
+- /success-list
