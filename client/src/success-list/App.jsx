@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Timer from './modules/timer.jsx'
+import TaskForm from './modules/task-form.jsx'
 import { Carousel, Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 
 class App extends React.Component {
@@ -29,7 +30,7 @@ class App extends React.Component {
                         <Timer/>
                     </Card.Header>
                     <Card.Body>
-                        <p> this is the card body</p>
+                        <TaskForm/>
                         {this.some}
                     </Card.Body>
                 </Card>
