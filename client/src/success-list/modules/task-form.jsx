@@ -20,6 +20,9 @@ const TaskForm = ({}) => {
                 <Form.Label>Details</Form.Label>
                 <Form.Control as="textarea" aria-label="Detail the acomplishment"></Form.Control>
             </Form.Group>
+            <Button type="submit">
+                Submit Form
+            </Button>
         </Form>
     )
 }
