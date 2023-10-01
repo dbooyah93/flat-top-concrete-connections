@@ -19,6 +19,11 @@ class App extends React.Component {
         let previousSuccess = localStorage.getItem('previousSuccess');
         console.log('Previous success: ' + previousSuccess);
     }
+
+    handleSubmit = function ( event ) {
+        event.preventDefault();
+        console.log( event );
+    }
     
 
     render() {
@@ -30,7 +35,7 @@ class App extends React.Component {
                         <Timer/>
                     </Card.Header>
                     <Card.Body>
-                        <TaskForm/>
+                        <TaskForm handleSubmit={this.handleSubmit}/>
                         {this.some}
                     </Card.Body>
                 </Card>
