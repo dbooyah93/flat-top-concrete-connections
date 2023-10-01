@@ -9,16 +9,26 @@ import Form from 'react-bootstrap/Form';
     // default text updates with every second
     // can be overwritten
 
-const TaskForm = ({}) => {
+const TaskForm = ({ handleSubmit }) => {
     return (
-        <Form>
-            <Form.Group className="mb-3">
-                <Form.Label>Acomplishment</Form.Label>
-                <Form.Control type="text" placeholder="What does this mean to YOU?" aria-label="Acomplishment title"/>
+        <Form
+            onSubmit={ handleSubmit }
+            data-bs-theme="dark">
+            <Form.Group
+                data-bs-theme="dark"
+                className="mb-3">
+                <Form.Label
+                    data-bs-theme="dark"
+                    >Acomplishment</Form.Label>
+                <Form.Control data-bs-theme="dark" type="text" placeholder="What does this mean to YOU?" aria-label="Acomplishment title"/>
             </Form.Group>
-            <Form.Group className="mb-3">
-                <Form.Label>Details</Form.Label>
-                <Form.Control as="textarea" aria-label="Detail the acomplishment"></Form.Control>
+            <Form.Group
+                data-bs-theme="dark"
+                className="mb-3">
+                <Form.Label
+                    data-bs-theme="dark"
+                    >Details</Form.Label>
+                <Form.Control data-bs-theme="dark" as="textarea" aria-label="Detail the acomplishment"></Form.Control>
             </Form.Group>
             <Button type="submit">
                 Submit Form
