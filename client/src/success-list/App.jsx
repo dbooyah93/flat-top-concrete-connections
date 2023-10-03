@@ -26,9 +26,10 @@ class App extends React.Component {
         // let acomplishment = targetForm.getElementById('acomplishment')
         const formData = new FormData(event.target);
         let formValues = [...formData];
-        console.log({formValues})
-        formData.map((value) => {
-            console.log(value);
+        formValues.map((submission, i) => {
+            console.log({submission, i});
+            formData.append(submission[0], submission[1])
+            console.log(formData.get('acomplishment'));
         })
         for (let i = 0; i < formData.length; i++) {
             formData.append(i[0], i[1]);
