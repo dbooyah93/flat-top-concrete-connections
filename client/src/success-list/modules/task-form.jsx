@@ -12,6 +12,7 @@ import Form from 'react-bootstrap/Form';
 const TaskForm = ({ handleSubmit }) => {
     return (
         <Form
+            id="form"
             onSubmit={ handleSubmit }
             data-bs-theme="dark">
             <Form.Group
@@ -20,7 +21,7 @@ const TaskForm = ({ handleSubmit }) => {
                 <Form.Label
                     data-bs-theme="dark"
                     >Acomplishment</Form.Label>
-                <Form.Control data-bs-theme="dark" type="text" placeholder="What does this mean to YOU?" aria-label="Acomplishment title"/>
+                <Form.Control name="acomplishment" data-bs-theme="dark" type="text" placeholder="What does this mean to YOU?" aria-label="Acomplishment title"/>
             </Form.Group>
             <Form.Group
                 data-bs-theme="dark"
@@ -28,7 +29,7 @@ const TaskForm = ({ handleSubmit }) => {
                 <Form.Label
                     data-bs-theme="dark"
                     >Details</Form.Label>
-                <Form.Control data-bs-theme="dark" as="textarea" aria-label="Detail the acomplishment"></Form.Control>
+                <Form.Control  name="details" data-bs-theme="dark" as="textarea" aria-label="Detail the acomplishment"></Form.Control>
             </Form.Group>
             <Button type="submit">
                 Submit Form
