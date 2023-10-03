@@ -22,7 +22,19 @@ class App extends React.Component {
 
     handleSubmit = function ( event ) {
         event.preventDefault();
-        console.log( event );
+        let targetForm = event.target;
+        // let acomplishment = targetForm.getElementById('acomplishment')
+        const formData = new FormData(event.target);
+        let formValues = [...formData];
+        console.log({formValues})
+        formData.map((value) => {
+            console.log(value);
+        })
+        for (let i = 0; i < formData.length; i++) {
+            formData.append(i[0], i[1]);
+            console.log(...formData);
+            console.log(i[0], i[1]);
+        }
     }
     
 
