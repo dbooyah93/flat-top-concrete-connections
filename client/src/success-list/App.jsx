@@ -30,7 +30,7 @@ class App extends React.Component {
             console.log({submission, i});
             formData.append(submission[0], submission[1])
             console.log(formData.get('acomplishment'));
-        })
+        });
         for (let i = 0; i < formData.length; i++) {
             formData.append(i[0], i[1]);
             console.log(...formData);
