@@ -10,9 +10,13 @@ class App extends React.Component {
         this.state = {
             some: 'sample text',
             previousSuccess: this.findCurrentData()
+
         }
 
-        // this.methods = this.method.bind(this) go here
+        this.findCurrentData = this.findCurrentData.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.establishFormDataEntries = this.establishFormDataEntries.bind(this);
+
     }
 
     findCurrentData = function () {
@@ -20,24 +24,26 @@ class App extends React.Component {
         console.log('Previous success: ' + previousSuccess);
     }
 
+    appendFormDataEntries = function ( formDataClass ) {
+        let formValues = [...formDataClass];
+        formValues.map((submission, i) => {
+            console.log({submission, i});
+            formDataClass.append(submission[0], submission[1])
+        });
+        return formDataClass;
+    }
+
     handleSubmit = function ( event ) {
         event.preventDefault();
         let targetForm = event.target;
-        // let acomplishment = targetForm.getElementById('acomplishment')
+        // let acomplishment = targetForm.getElementById('acomplishment');
         const formData = new FormData(event.target);
-        let formValues = [...formData];
-        formValues.map((submission, i) => {
-            console.log({submission, i});
-            formData.append(submission[0], submission[1])
-            console.log(formData.get('acomplishment'));
-        });
-        for (let i = 0; i < formData.length; i++) {
-            formData.append(i[0], i[1]);
-            console.log(...formData);
-            console.log(i[0], i[1]);
+        // establish key,values to formData object
+        this.appendFormDataEntries( formData );
+        for (const pair of formData.entries()) {
+            console.log(`${pair[0]}, ${pair[1]}`);
         }
     }
-    
 
     render() {
         return ( 
