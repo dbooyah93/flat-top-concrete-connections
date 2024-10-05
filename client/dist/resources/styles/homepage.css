@@ -25,3 +25,13 @@
 .dedication > p {
     margin: 0;
 }
+
+.body { 
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 62px;
+}
+
+h3 { 
+    margin-top: 62px;
+}
