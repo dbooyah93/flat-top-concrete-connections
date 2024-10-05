@@ -1,7 +1,27 @@
-.header {
-    
+.context {
+    display: flex;
+    justify-content: space-between;
 }
 
-.hero {
+.company {
+    flex: 2 1 100px;
+}
 
+.project {
+    min-width: 250px;
+}
+
+.location, .title, .duration, .responsibility, .utilities {
+    flex: 1 1 100px;
+    text-align: center;
+}
+
+.dedication {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 32px;
+}
+
+.dedication > p {
+    margin: 0;
 }
