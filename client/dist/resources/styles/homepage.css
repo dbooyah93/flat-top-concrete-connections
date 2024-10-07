@@ -48,12 +48,13 @@ header {
     background-color: #ada8a8;
 }
 
-header > h1 {
+header  h1, header h2{
     margin: 0 3px;
+    align-content: end;
 }
 
 h3 { 
-    margin-top: 62px;
+    margin-top: 34px;
 }
 
 .headline { 
@@ -66,6 +67,11 @@ h3 {
 
 h1, h2, h3, h4 {
     color: #1b8171;
+}
+
+.primer-content {
+    display: flex;
+    column-gap: 12px;
 }
 
 nav {
