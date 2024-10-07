@@ -26,12 +26,66 @@
     margin: 0;
 }
 
+.main-content { 
+    padding: 16px;
+}
+
+body {
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
 .body { 
     max-width: 1200px;
-    margin: auto;
-    margin-bottom: 62px;
+    padding: 16px 0;
+    margin: 0 auto;
+    background-color: #ada8a8;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #ada8a8;
+}
+
+header > h1 {
+    margin: 0 3px;
 }
 
 h3 { 
     margin-top: 62px;
+}
+
+.headline { 
+    justify-content: space-between;
+}
+
+.headline h1, .headline h2 {
+    display: inline;
+}
+
+h1, h2, h3, h4 {
+    color: #1b8171;
+}
+
+nav {
+    border-style: solid none;
+    border-width: 1px;
+    padding-top: 10px;
+}
+
+nav a {
+    margin: 10px;
+}
+
+.closer { 
+    display: flex;
+}
+
+.technical-skills {
+    max-width: 70%
+}
+
+section:nth-child(2){
+    max-width: 30%
 }
