@@ -35,3 +35,11 @@
 h3 { 
     margin-top: 62px;
 }
+
+.headline { 
+    justify-content: space-between;
+}
+
+.headline h1, .headline h2 {
+    display: inline;
+}
