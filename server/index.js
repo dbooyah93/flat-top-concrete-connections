@@ -10,8 +10,15 @@ app.use( express.urlencoded( { extended: true } ) );
 app.use( express.json( { extended: true } ) );
 app.use( '/', express.static( __dirname + '/../client/dist' ) );
 
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 let transporter = nodemailer.createTransport({
-  service: 'Gmail',
+  host: 'mail.privateemail.com',
+  port: 587, // 587 or 465 for SSL,
+  secure: false,
   auth: {
     user: EMAILADDRESS,
     pass: EMAILPASS
@@ -21,14 +28,16 @@ let transporter = nodemailer.createTransport({
 
 app.post('/email', function ( req, res ) {
   console.log('request received')
-  console.log( req.body );
   transporter.sendMail({
-    from: '<A new client>',
+    from: EMAILADDRESS,
     to: EMAILADDRESS,
-    subject: 'Constructing Connections Outreach from ' + req.body.email,
-    text: req.body.message + '\nRespond to client: ' + req.body.email
+    subject: 'Constructing Connections Outreach from ' + req.body.user_name,
+    text: req.body.message + '\nRespond to client: ' + req.body.user_message,
+    replyTo: req.body.user_email
   })
   .then( ( response ) => {
+    console.log('success')
+    console.log( req.body );
     res.send('Success');
   })
   .catch( ( err ) => {
