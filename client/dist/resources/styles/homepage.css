@@ -77,11 +77,17 @@ h1, h2, h3, h4 {
 nav {
     border-style: solid none;
     border-width: 1px;
-    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 nav a {
-    margin: 10px;
+    border-left: 1px;
+    border-left-style: solid;
+    border-right: 1px;
+    border-right-style: solid;
+    padding: 0 1rem;
+    line-height: 40px;
 }
 
 .closer { 

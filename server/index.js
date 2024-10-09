@@ -28,11 +28,14 @@ let transporter = nodemailer.createTransport({
 
 app.post('/email', function ( req, res ) {
   console.log('request received')
+  if (!isValidEmail(req.body.user_email)) {
+    res.status(400).send('Bad email format');
+  }
   transporter.sendMail({
     from: EMAILADDRESS,
     to: EMAILADDRESS,
-    subject: 'Constructing Connections Outreach from ' + req.body.user_name,
-    text: req.body.message + '\nRespond to client: ' + req.body.user_message,
+    subject: req.body.user_name,
+    text: req.body.user_message,
     replyTo: req.body.user_email
   })
   .then( ( response ) => {
