@@ -1,6 +1,5 @@
-.context {
-    display: flex;
-    justify-content: space-between;
+h1 {
+    font-size: 3.5rem;
 }
 
 .company {
@@ -100,4 +99,11 @@ nav a {
 
 section:nth-child(2){
     max-width: 30%
+}
+
+@media screen and (min-width: 700px) {
+    .context {
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
