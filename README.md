@@ -1,17 +1,56 @@
-# flat-top-concrete-connections
-A website that will deliver quotes to clients, and jobs to contractors
-## Overview
-### The site
-[constructingconnections.com](http://constructingconnections.com)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-### The purpose
-Offload the need for contractors to focus on networking and deliver quality artisans to the doors of non commercial clients
+## Getting Started
 
-### The mission
-Small business is the foundation of the American economy. Our mission is to be the fertilizer for small businesses by providing the nutrients of client acquisition.
+First, run the development server:
 
-### The future
-Currently the site has about 4 hours of work on it hosting a small gallery of work from a contractor working with me. Soon we will have a form to reach out to us through, and shortly after we will have a proper landing page with sub domains directed towards contractors profiles
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### Call to action!!
-Check in weekly or daily! Changes are happening most frequently Sunday night to Wednesday morning, but I have tons of motivation and support so the evolution should be quick! Feel free to message me suggestions or keep your ideas general and just tell me a pain point for you and home owner ship.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+___
+
+## Todo
+
+Migrate and integrate welcome page and contact page
+
+- Welcome page
+    - Links
+        - contact me
+        - projects
+        - todo
+        - map
+        - blog
+    - Intro Bio
+
+- Contact me
+    - form
+    - accept the form
+

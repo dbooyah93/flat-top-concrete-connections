@@ -1,42 +1,24 @@
 {
-  "name": "Save_for_Success",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "flat-top-concrete-connections",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "webpack --mode development",
-    "watch": "webpack --watch --mode development",
-    "start": "node server/index.js",
-    "test": "test"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dbooyah93/flat-top-concrete-connections"
-  },
-  "keywords": [
-    "Budget",
-    "Savings"
-  ],
-  "author": "David M Boyea",
-  "license": "ISC",
-  "homepage": "https://github.com/dbooyah93/TBD",
   "dependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-react": "^7.12.10",
-    "axios": "^0.21.0",
-    "babel-loader": "^8.2.2",
-    "bootstrap": "^5.2.3",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "nodemailer": "^6.6.3",
-    "react": "^17.0.1",
-    "react-bootstrap": "^2.0.0-beta.4",
-    "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1",
-    "webpack-cli": "^4.1.0"
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.15"
   },
   "devDependencies": {
-    "sass": "^1.58.0",
-    "sass-loader": "^13.2.0",
-    "webpack": "^5.75.0"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15"
   }
 }
