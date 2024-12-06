@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Carousel, Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import styles from "../dist/resources/styles/homepage.module.css";
+import styles from "./styles/homepage.module.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -34,21 +33,22 @@ class App extends React.Component {
     console.log(event);
   }
 
-  sendClientEmail(event) {
-    axios.post('/email', {
-      email: this.state.email,
-      message: this.state.message,
-      files: 'this.files'
-    })
-      .then((response) => {
-        console.log(response.data);
-      });
-  }
+  // sendClientEmail(event) {
+  //   axios.post('/email', {
+  //     email: this.state.email,
+  //     message: this.state.message,
+  //     files: 'this.files'
+  //   })
+  //     .then((response) => {
+  //       console.log(response.data);
+  //     });
+  // }
 
   render() {
     return (
       <div >
-        <div className="body">
+        <p> yo 2</p>
+        <div className={styles.body}>
           <header>
             <div className="primer-content">
               <h1>David Cruz</h1>

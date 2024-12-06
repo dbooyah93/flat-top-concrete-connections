@@ -24,16 +24,11 @@ module.exports = () => {
           }
         },
         {
-          test: /\.module\.css$/,
-          use: [
-            'style-loader',
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true, // Enable CSS Modules
-              },
-            },
-          ],
+          test: /\.css$/i,
+          loader: 'css-loader',
+          options: {
+            modules: true, // Enable CSS Modules
+          },
         },
       ]
     }

@@ -15,3 +15,10 @@ Currently the site has about 4 hours of work on it hosting a small gallery of wo
 
 ### Call to action!!
 Check in weekly or daily! Changes are happening most frequently Sunday night to Wednesday morning, but I have tons of motivation and support so the evolution should be quick! Feel free to message me suggestions or keep your ideas general and just tell me a pain point for you and home owner ship.
+
+
+## To improve the parsing of emails
+ - create a timer on emails being sent
+    - save the emails of every person that sends an email 
+        - SQL
+        - establish a way to mark them as spam
