@@ -32,7 +32,7 @@ app.post('/email', function ( req, res ) {
     res.status(400).send('Bad email format');
   }
   transporter.sendMail({
-    from: `${req.body.user_email} EMAILADDRESS`,
+    from: EMAILADDRESS,
     to: EMAILADDRESS,
     subject: req.body.user_name,
     text: req.body.user_message,
