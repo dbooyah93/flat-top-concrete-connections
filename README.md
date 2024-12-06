@@ -15,3 +15,7 @@ Currently the site has about 4 hours of work on it hosting a small gallery of wo
 
 ### Call to action!!
 Check in weekly or daily! Changes are happening most frequently Sunday night to Wednesday morning, but I have tons of motivation and support so the evolution should be quick! Feel free to message me suggestions or keep your ideas general and just tell me a pain point for you and home owner ship.
+
+### How to dev
+npm run watch (webpack watch bundling js)
+npm run start (server command, serves the bundle)

@@ -7,11 +7,11 @@ class App extends React.Component {
         super( props );
         this.state = {
             images: [
-                "./resources/images/AndysConcrete/sideWalkDemoStart.jpg",
-                "./resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg",
-                "./resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg",
-                "./resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
-                "./resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
+                "../resources/images/AndysConcrete/sideWalkDemoStart.jpg",
+                "../resources/images/AndysConcrete/sideWalkDemoFirstMiddle.jpg",
+                "../resources/images/AndysConcrete/sideWalkDemoSecondMiddle.jpg",
+                "../resources/images/AndysConcrete/sideWalkDemoFirstFinal.jpg",
+                "../resources/images/AndysConcrete/sideWalkDemoFinalFinal.jpg"
             ],
             email: '',
             message: '',
@@ -95,24 +95,6 @@ class App extends React.Component {
                                 }
                             </Carousel>
                         </Container>
-                            <Form>
-                                <Form.Group className="mb-3" controlId="email">
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control onChange={ this.handleTextChange } type="email" placeholder="Enter email" />
-                                    <Form.Text className="text-muted">
-                                        We will only share your email address with the contractor(s) you choose
-                                    </Form.Text>
-                                </Form.Group>
-                                <Form.Group controlId="formFileMultiple" className="mb-3">
-                                    <Form.Label>Check back in this weekend for the ability to upload images</Form.Label>
-                                    <Form.Control onChange={ this.handleMultiImageUpload } type="file" multiple disabled/>
-                                </Form.Group>
-                                <Form.Group className="mb-3" controlId="message">
-                                    <Form.Label>Your message</Form.Label>
-                                    <Form.Control onChange={ this.handleTextChange } as="textarea" type="message" rows={3} />
-                                </Form.Group>
-                                <Button onClick={ this.sendClientEmail } variant="primary" >Send</Button>
-                            </Form>
                     </Card.Body>
                 </Card>
             </div>
