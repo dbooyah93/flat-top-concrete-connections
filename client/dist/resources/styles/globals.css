@@ -1,3 +1,5 @@
 body {
-    --standard-bg-color: #ada8a8;
+    --standard-bg-color: lightgrey;
+    --standard-left-right_padding: 1.5rem;
+    font-size: 24px
 }
