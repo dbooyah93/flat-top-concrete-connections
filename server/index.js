@@ -15,10 +15,6 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
-const express = require('express');
-const path = require('path');
-const router = express.Router();
-
 // Route for serving index.html at /4d-0 path
 router.get('/4d-0', (req, res) => {
   // Absolute path to the index.html file
