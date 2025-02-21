@@ -15,6 +15,24 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
+const express = require('express');
+const path = require('path');
+const router = express.Router();
+
+// Route for serving index.html at /4d-0 path
+router.get('/4d-0', (req, res) => {
+  // Absolute path to the index.html file
+  const filePath = path.resolve(__dirname, 'client', 'dist', '4d-0', 'index.html');
+
+  // Send the file to the client
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error('Error sending file:', err);
+      res.status(500).send('Error serving the file.');
+    }
+  });
+});
+
 let transporter = nodemailer.createTransport({
   host: 'mail.privateemail.com',
   port: 587, // 587 or 465 for SSL,

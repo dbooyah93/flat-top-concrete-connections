@@ -1,0 +1,22 @@
+{
+    "name": "Realistic 3D Buttons",
+    "short_name": "3D Buttons",
+    "description": "Track drinks remaining and water drank with realistic 3D buttons.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#E4D00A",
+    "icons": [
+      {
+        "src": "icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

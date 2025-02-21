@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    /* Base Styling */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Realistic Button Styling */
+    .realistic-button {
+      width: 160px;
+      height: 56px;
+      border-radius: 28px;
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Top Button */
+    #drinks-button {
+      background: linear-gradient(180deg, #FFB300, #FF8F00); /* Start with yellow to orange gradient */
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3), 0 -4px 8px rgba(255, 255, 255, 0.7), 0 3px 4px 2px silver;
+      transition: background-color 0.5s ease;
+    }
+
+    /* Bottom Button */
+    #water-button {
+      background: linear-gradient(180deg, #1DE9B6, #16c29a);
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3), 0 -4px 8px rgba(255, 255, 255, 0.7), 0 3px 4px 2px silver;
+    }
+
+    /* Hover Effect */
+    .realistic-button:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4), 0 -2px 6px rgba(255, 255, 255, 0.6), 0 2px 3px 2px silver;
+      transform: translateY(-2px);
+    }
+
+    /* Active (Press) Effect */
+    .realistic-button:active {
+      transform: translateY(4px);
+      box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4), inset -2px -2px 6px rgba(255, 255, 255, 0.6), 0 1px 2px 2px silver;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .button-container {
+        gap: 8px;
+        padding: 10px;
+      }
+      .realistic-button {
+        width: 140px;
+        height: 50px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button id="drinks-button" class="realistic-button">3</button>
+    <button id="water-button" class="realistic-button">0</button>
+  </div>
+
+  <script>
+    // Load initial values from localStorage or defaults
+    let drinksRemaining = parseInt(localStorage.getItem('drinks-remaining')) || 3;
+    let waterDrank = parseInt(localStorage.getItem('water-drank')) || 0;
+    let lastDrinkUpdate = parseInt(localStorage.getItem('last-drink-update')) || Date.now();
+
+    const drinksButton = document.getElementById('drinks-button');
+    const waterButton = document.getElementById('water-button');
+
+    // Update drinks based on elapsed hours
+    const updateDrinks = () => {
+      const now = Date.now();
+      const hoursElapsed = Math.floor((now - lastDrinkUpdate) / (1000 * 60 * 60));
+      drinksRemaining = Math.min(3, drinksRemaining + hoursElapsed);
+      lastDrinkUpdate += hoursElapsed * (1000 * 60 * 60);
+      localStorage.setItem('drinks-remaining', drinksRemaining);
+      localStorage.setItem('last-drink-update', lastDrinkUpdate);
+      drinksButton.textContent = drinksRemaining;
+      updateButtonColor();
+    };
+
+    // Update button color based on drinks remaining
+    const updateButtonColor = () => {
+      const negativeThreshold = Math.max(0, Math.min(10, -drinksRemaining));
+      const redIntensity = Math.floor((negativeThreshold / 10) * 255);
+      
+      // Change the starting color to a more striking yellow/orange
+      const startColor = `rgb(255, ${255 - redIntensity}, 0)`; // Vibrant yellow to orange
+      drinksButton.style.backgroundColor = startColor;
+    };
+
+    // Initialize values
+    updateDrinks();
+    waterButton.textContent = waterDrank;
+
+    // Drink button click handler
+    drinksButton.addEventListener('click', () => {
+      drinksRemaining--;
+      drinksButton.textContent = drinksRemaining;
+      localStorage.setItem('drinks-remaining', drinksRemaining);
+      localStorage.setItem('last-drink-update', Date.now());
+      updateButtonColor();
+    });
+
+    // Water button click handler
+    waterButton.addEventListener('click', () => {
+      waterDrank++;
+      waterButton.textContent = waterDrank;
+      localStorage.setItem('water-drank', waterDrank);
+    });
+
+    // Hourly increment for drinks
+    setInterval(updateDrinks, 60000); // Check every minute
+
+    // 8-hour decrement for water
+    setInterval(() => {
+      if (waterDrank > 0) {
+        waterDrank--;
+        waterButton.textContent = waterDrank;
+        localStorage.setItem('water-drank', waterDrank);
+      }
+    }, 28800000); // 8 hours
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker Registered'))
+        .catch(err => console.error('Service Worker Registration Failed:', err));
+    }
+  </script>
+</body>
+</html>
