@@ -40,13 +40,14 @@
     }
 
     /* Top Button */
-    .realistic-button:first-child {
-      background: linear-gradient(180deg, #E4D00A, #c6b308);
+    #drinks-button {
+      background: linear-gradient(180deg, #FFB300, #FF8F00); /* Start with yellow to orange gradient */
       box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3), 0 -4px 8px rgba(255, 255, 255, 0.7), 0 3px 4px 2px silver;
+      transition: background-color 0.5s ease;
     }
 
     /* Bottom Button */
-    .realistic-button:last-child {
+    #water-button {
       background: linear-gradient(180deg, #1DE9B6, #16c29a);
       box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3), 0 -4px 8px rgba(255, 255, 255, 0.7), 0 3px 4px 2px silver;
     }
@@ -101,6 +102,17 @@
       localStorage.setItem('drinks-remaining', drinksRemaining);
       localStorage.setItem('last-drink-update', lastDrinkUpdate);
       drinksButton.textContent = drinksRemaining;
+      updateButtonColor();
+    };
+
+    // Update button color based on drinks remaining
+    const updateButtonColor = () => {
+      const negativeThreshold = Math.max(0, Math.min(10, -drinksRemaining));
+      const redIntensity = Math.floor((negativeThreshold / 10) * 255);
+      
+      // Change the starting color to a more striking yellow/orange
+      const startColor = `rgb(255, ${255 - redIntensity}, 0)`; // Vibrant yellow to orange
+      drinksButton.style.backgroundColor = startColor;
     };
 
     // Initialize values
@@ -109,12 +121,11 @@
 
     // Drink button click handler
     drinksButton.addEventListener('click', () => {
-      if (drinksRemaining > 0) {
-        drinksRemaining--;
-        drinksButton.textContent = drinksRemaining;
-        localStorage.setItem('drinks-remaining', drinksRemaining);
-        localStorage.setItem('last-drink-update', Date.now());
-      }
+      drinksRemaining--;
+      drinksButton.textContent = drinksRemaining;
+      localStorage.setItem('drinks-remaining', drinksRemaining);
+      localStorage.setItem('last-drink-update', Date.now());
+      updateButtonColor();
     });
 
     // Water button click handler
