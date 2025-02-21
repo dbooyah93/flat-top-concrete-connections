@@ -11,10 +11,9 @@ module.exports = () => {
   return {
     entry: {
       main: './client/src/index.jsx',
-      site: './client/src/4d-0/index.jsx'
     },
     output: {
-      path: path.join( __dirname, `/client/dist/[name]` ),
+      path: path.join( __dirname, `/client/dist` ),
       filename: 'bundle.js',
     },
     module: {
