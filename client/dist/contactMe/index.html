@@ -2,26 +2,13 @@
 <html>
   <head>
     <title> Building your site </title>
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <h1>Show me what you've got</h1>
   <a href="/">Home</a>
   <body class="body">
-    <form action="/email" method="post">
-      <p>
-        <label id="name">Name</label>
-        <input type="text" id="name" name="user_name">
-      </p>
-      <p>
-        <label>Email</label>
-        <input type="email" id="email" name="user_email">
-      </p>
-      <p>
-        <label for="msg">Message</label>
-        <textarea id="msg" name="user_message"></textarea>
-      </p>
-      <button type="submit">Submit</button>
-    </form>
-    <link rel="stylesheet" href="./styles.css">
-
+    <header id="header"></header>
+    <div id="contact-form"></div>
+    <footer id="footer"></footer>
   </body>
 </html>

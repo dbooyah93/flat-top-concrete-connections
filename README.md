@@ -19,3 +19,11 @@ Check in weekly or daily! Changes are happening most frequently Sunday night to 
 ### How to dev
 npm run watch (webpack watch bundling js)
 npm run start (server command, serves the bundle)
+
+
+### Make structure of folders
+src/components
+is for reusable, client side js user interactive fun stuff
+
+src/pageChunks
+is to define the imports to excersize js chunking

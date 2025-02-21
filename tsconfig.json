@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                          // Target modern JavaScript (can be ES5 if you need older compatibility)
+      "module": "ESNext",                      // Module system that works with Webpack
+      "moduleResolution": "Node",             // Match module resolution method to Node.js
+      "lib": ["DOM", "DOM.Iterable", "ESNext"], // Include DOM and ESNext types
+      "jsx": "react-jsx",                          // Use JSX syntax for React
+      "strict": true,                          // Enable strict type-checking options
+      "esModuleInterop": true,                 // Interoperability for CommonJS modules (e.g., importing `require` modules)
+      "skipLibCheck": true,                    // Skip checking types of libraries
+      "forceConsistentCasingInFileNames": true, // Ensure consistent casing in imports
+      "sourceMap": true,                       // Enable source maps for debugging
+      "outDir": "./dist",                      // Output directory for compiled files
+      "baseUrl": ".",                          // Base directory for non-relative module imports
+      "paths": {
+        "@components/*": ["src/components/*"], // Alias for components folder
+        "@utils/*": ["src/utils/*"]            // Alias for utilities folder
+      }
+    },
+    "include": [
+      "src/**/*"                               // Include all files in the `src` directory
+    ],
+    "exclude": [
+      "node_modules",                          // Exclude `node_modules` folder
+      "dist"                                   // Exclude output folder
+    ]
+  }
+  
